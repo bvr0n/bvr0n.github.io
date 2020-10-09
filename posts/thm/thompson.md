@@ -1,5 +1,6 @@
 ---
 layout: default
+title : bvr0n - mindgames Write-up
 ---
 
 _**Sept 30, 2020**_
