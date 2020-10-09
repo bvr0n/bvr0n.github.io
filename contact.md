@@ -16,3 +16,14 @@ title: Main - bvr0n's | Infosec Blog
 
 ### Gmail : elghadtaha@gmail.com
 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+[back to main()](../../index.md)
+
+<br>
