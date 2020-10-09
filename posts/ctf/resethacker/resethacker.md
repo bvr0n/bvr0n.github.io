@@ -1,6 +1,6 @@
 ---
 layout: default
-title : bvr0n - Biohazard Write-up
+title : bvr0n - Find The Victim Write-up
 ---
 
 
@@ -13,7 +13,7 @@ title : bvr0n - Biohazard Write-up
 ### writeups
 
 
-- **Misc  :** [Find The Victim](./posts/ctf/resethacker/resethacker.md)
+- **Misc  :** [Find The Victim](./posts/ctf/resethacker/FineTheVictim.md)
 
 
 <br>
