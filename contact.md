@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Main - bvr0n's | Infosec Blog
+title: Contact - bvr0n's | Infosec Blog
 ---
 
 # [Main](./index.md) &nbsp;&nbsp;   [Contact](./contact.md) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
@@ -15,8 +15,7 @@ title: Main - bvr0n's | Infosec Blog
 
 ### [TryHackMe](https://tryhackme.com/p/bvr0n)
 
-### [Gmail](elghadtaha@gmail.com)
-
+### Gmail : elghadtaha@gmail.com
 
 <br>
 <br>
