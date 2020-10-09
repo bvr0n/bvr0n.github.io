@@ -13,7 +13,7 @@ title : bvr0n - Find The Victim Write-up
 ### writeups
 
 
-- **Misc  :** [Find The Victim](./posts/ctf/resethacker/FineTheVictim.md)
+- **Misc  :** [Find The Victim](./posts/ctf/resethacker/FindTheVictim.md)
 
 
 <br>
