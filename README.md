@@ -23,7 +23,6 @@ Hope you enjoy this and happy hacking.
 
 # HackTheBox_Writeups()
 
-- **Aug 29, 2020:** [HackTheBox - Blackfield Writeup](./posts/htb/blackfield.md)
 
 <br clear="left">
 
