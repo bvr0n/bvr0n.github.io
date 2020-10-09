@@ -12,11 +12,11 @@ title: Main - bvr0n's | Infosec Blog
 
 Welcome to my official Blog, Here i will share with you some of my `Writeups` that i have written when playing `CTF Competitions` or some rooms in [TryHackMe](https://tryhackme.com/) or [HackTheBox](https://www.hackthebox.eu/) or some `Articles` related to `CyberSecurity`.
 
-Hope you enjoy this and happy hacking.
+Hope you enjoy this and happy hacking.<br>
+<br>
 
 
-
-# TryHackMe_Writeups()
+# TryHackMe_Writeups() 
 <br>
 
 - **Sep 30, 2020:** [TryHackme - Thompson](./posts/thm/thompson.md)
@@ -32,7 +32,8 @@ Hope you enjoy this and happy hacking.
 <br>
 
 Soon.
-
+<br>
+<br>
 
 # CTF_Writeups()
 <br>
