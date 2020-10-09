@@ -3,8 +3,9 @@ layout: default
 title: Main - bvr0n's | Infosec Blog
 ---
 
-# [Main](./index.md) &nbsp;&nbsp;   [Contact](./contact.md) &nbsp;&nbsp; [About Me](./aboutme.md) 
+# [Main](./index.md) &nbsp;&nbsp;   [Contact](./contact.md) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
 
+<br>
 
 ## Welcome To My Blog :
 <br>
