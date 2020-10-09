@@ -1,7 +1,10 @@
 ---
 layout: default
-title: bvr0n Infosec Blog
+title: Main - bvr0n's | Infosec Blog
 ---
+
+# [Main](./index.md) &nbsp;&nbsp;   [Contact](./contact.md) &nbsp;&nbsp; [About Me](./aboutme.md) 
+
 
 ## Welcome To My Blog :
 <br>
@@ -9,6 +12,7 @@ title: bvr0n Infosec Blog
 Welcome to my official Blog, Here i will share with you some of my `Writeups` that i have written when playing `CTF Competitions` or some rooms in [TryHackMe](https://tryhackme.com/) or [HackTheBox](https://www.hackthebox.eu/) or some `Articles` related to `CyberSecurity`.
 
 Hope you enjoy this and happy hacking.
+
 
 
 # TryHackMe_Writeups()
