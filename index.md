@@ -39,7 +39,7 @@ Soon.
 <br>
 
 - **Aug 28, 2020  :** [Resethacker 2020](./posts/ctf/resethacker/resethacker.md)
-- **Aug 3-4, 2020 :** [B01lers 2020](./posts/ctf/b01lers.md)
+- **Aug 3-4, 2020 :** [B01lers 2020](./posts/ctf/b01lers/b01lers.md)
 
 <br>
 <br>
