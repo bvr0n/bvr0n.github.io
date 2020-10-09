@@ -1,37 +1,38 @@
-## Welcome to GitHub Pages
+---
+layout: default
+title: bvr0n Infosec Blog
+---
 
-You can use the [editor on GitHub](https://github.com/bvr0n/bvr0n.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+## Welcome To My Blog :
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Welcome to my official Blog, Here i will share with you some of my `Writeups` that i have written when playing `CTF Competitions` or some rooms in [TryHackMe](https://tryhackme.com/) or [HackTheBox](https://www.hackthebox.eu/) or some `Articles` related to `CyberSecurity`.
 
-### Markdown
+Hope you enjoy this and happy hacking.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+# TryHackMe_Writeups()
 
-# Header 1
-## Header 2
-### Header 3
+- **Sep 30, 2020:** [TryHackme - Thompson](./posts/thm/thompson.md)
+- **Oct 02, 2020:** [TryHackme - Biohazard](./posts/thm/Biohazard.md)
+- **Oct 04, 2020:** [TryHackme - One Piece](./posts/thm/one_piece.md)
+- **Oct 05, 2020:** [TryHackme - Mindgames](./posts/thm/Mindgames.md)
+- **Oct 06, 2020:** [TryHackme - UltraTech](./posts/thm/UltraTech.md)
 
-- Bulleted
-- List
+<br clear="left">
 
-1. Numbered
-2. List
 
-**Bold** and _Italic_ and `Code` text
+# HackTheBox_Writeups()
 
-[Link](url) and ![Image](src)
-```
+- **Aug 29, 2020:** [HackTheBox - Blackfield Writeup](./posts/htb/blackfield.md)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+<br clear="left">
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/bvr0n/bvr0n.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+# CTF_Writeups()
 
-### Support or Contact
+- **Aug 28, 2020  :** [Resethacker 2020](./posts/ctf/resethacker.md)
+- **Aug 3-4, 2020 :** [B01lers 2020](./posts/ctf/b01lers.md)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+<br>
+<br>
+<br>
