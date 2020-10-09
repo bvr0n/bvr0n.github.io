@@ -11,15 +11,15 @@ title : B01lers_CTF Writeups
 
 ## WEB
 
-- **[bvr0n  - Reindeer Flotilla](./b01lers/web_03_Reindeer_Flotilla.md)**
+- **[bvr0n  - Reindeer Flotilla](web_03_Reindeer_Flotilla.md)**
 
 
 ## Misc
 
-- **[bvr0n - Echoes of Reality](./b01lers/misc_01_Echoes_of_Reality.md)**
-- **[bvr0n - Granular Data](./b01lers/misc_02_Granular_Data.md)**
-- **[bvr0n - Zima Blue](./b01lers/misc_04_Zima_Blue.md)**
-- **[bvr0n - Needle In A Haystack](./b01lers/misc_03_Needle_In_A_Haystack.md)**
+- **[bvr0n - Echoes of Reality](misc_01_Echoes_of_Reality.md)**
+- **[bvr0n - Granular Data](misc_02_Granular_Data.md)**
+- **[bvr0n - Zima Blue](misc_04_Zima_Blue.md)**
+- **[bvr0n - Needle In A Haystack](misc_03_Needle_In_A_Haystack.md)**
 
 
 <br>
