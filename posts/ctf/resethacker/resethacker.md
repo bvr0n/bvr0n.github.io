@@ -13,7 +13,7 @@ title : bvr0n - Biohazard Write-up
 ### writeups
 
 
-- **Misc  :** [Find The Victim](./resethacker/FindTheVictim.md)
+- **Misc  :** [Find The Victim](./posts/ctf/resethacker/resethacker.md)
 
 
 <br>
