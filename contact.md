@@ -24,6 +24,6 @@ title: Main - bvr0n's | Infosec Blog
 <br>
 <br>
 
-[back to main()](../../index.md)
+[Back to Main()](./index.md)
 
 <br>
