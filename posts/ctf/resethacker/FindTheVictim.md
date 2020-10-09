@@ -86,7 +86,7 @@ best regards
 <br>
 <br>
 
-[back to RESTHACKER_CTF](../../ctf/resethacker.md)
+[back to RESTHACKER_CTF](resethacker.md)
 
 [back to main()](https://bvr0n.github.io/)
 
