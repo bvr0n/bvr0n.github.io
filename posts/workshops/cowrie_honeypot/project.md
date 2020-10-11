@@ -11,8 +11,11 @@ _**Oct 11, 2020**_
 # What is Cowrie :
 
 It is mostly used to records the sessions of an attacker, then with cowrie we get a better comprehension on the details of the attacker such as the attacker tools, methods and procedures. 
+
 Cowrie is a simulation of your server that means that the attacker will think that they have hacked/attacked your server. 
+
 So when a attacker inputs the right data(username or password) to log into your system, the system will let them in without any error and they’ve put themselves into a fake system. 
+
 The honeypot keeps the records and tracks of the attacker such as their commands, or every keys typed in and saves everything the attacker downloaded. This is a genius way to capture an attacker.
 
 # What is a Honeypot :
@@ -79,7 +82,7 @@ pip install -r requirements.txt
 ![Banner](/assets/images/cowrie_ssh_honeypot/3d%20step.png "Banner")
 
 
-Finally let's exporth the `$PATH` & we are ready to start daemon :
+Finally let's export the `$PATH` & we are ready to start daemon :
 ```
 cd bin/
 ./cowrie start
