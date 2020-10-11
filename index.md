@@ -14,9 +14,15 @@ Welcome to my Official Blog, Here i will share with you some of my `Writeups` th
 
 Hope you enjoy this and happy hacking.<br>
 <br>
+<br>
+
+# CyberSecurity Workshops :
+<br>
+
+- **Oct 11, 2020:** [Cowrie SSH Honeypot]
 
 
-# TryHackMe_Writeups() 
+# TryHackMe Writeups : 
 <br>
 
 - **Sep 30, 2020:** [TryHackme - Thompson](./posts/thm/thompson.md)
@@ -28,14 +34,14 @@ Hope you enjoy this and happy hacking.<br>
 <br clear="left">
 
 
-# HackTheBox_Writeups()
+# HackTheBox Writeups :
 <br>
 
 Soon.
 <br>
 <br>
 
-# CTF_Writeups()
+# CTF Writeups :
 <br>
 
 - **Aug 28, 2020  :** [Resethacker 2020](./posts/ctf/resethacker/resethacker.md)
