@@ -19,7 +19,7 @@ Hope you enjoy this and happy hacking.<br>
 # CyberSecurity Workshops :
 <br>
 
-- **Oct 11, 2020:** [Cowrie SSH Honeypot]
+- **Oct 11, 2020:** [Cowrie SSH Honeypot]()
 
 
 # TryHackMe Writeups : 
