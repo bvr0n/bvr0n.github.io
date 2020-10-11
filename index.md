@@ -14,12 +14,11 @@ Welcome to my Official Blog, Here i will share with you some of my `Writeups` th
 
 Hope you enjoy this and happy hacking.<br>
 <br>
-<br>
 
 # CyberSecurity Workshops :
 <br>
 
-- **Oct 11, 2020:** [Cowrie SSH Honeypot]()
+- **Oct 11, 2020:** [Cowrie SSH Honeypot](./posts/workshops/cowrie_honeypot/project.md)
 
 
 # TryHackMe Writeups : 
