@@ -36,7 +36,7 @@ Hope you enjoy this and happy hacking.<br>
 # HackTheBox Writeups :
 <br>
 
-- **Oct 10, 2020:** [HackTheBox - Unbalanced](./posts/htb/unbalanced.md)
+Soon.
 
 <br>
 
