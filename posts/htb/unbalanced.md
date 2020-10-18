@@ -109,7 +109,7 @@ Now we have to write a scripte to grabe the passwords for us.
 
 After writing an exploit (Thanks to [m3dsec](github.com/m3dsec) for the help) we get the creds for ssh :
 
-Final script :
+Final [m3dsec](github.com/m3dsec) script :
 ```python
 !/usr/bin/python3
 import requests
