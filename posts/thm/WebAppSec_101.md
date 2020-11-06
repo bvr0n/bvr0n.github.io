@@ -1,0 +1,73 @@
+---
+layout: default
+title : bvr0n - WebAppSec 101 Write-up
+---
+
+_**Oct 02, 2020**_
+
+[WebAppSec 101](https://tryhackme.com/room/webappsec101) Writeup
+
+## Website Enum [TASK 2] :
+```
+bvr0n@kali:~$ curl -I http://10.10.201.204/
+HTTP/1.1 200 OK
+Date: Fri, 06 Nov 2020 12:17:13 GMT
+Server: Apache/2.4.7 (Ubuntu)
+X-Powered-By: PHP/5.5.9-1ubuntu4.24
+Set-Cookie: PHPSESSID=g0s8bmc585agbaf3l2l4v5ft13; path=/
+Expires: Thu, 19 Nov 1981 08:52:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache
+Content-Type: text/html
+```
+
+
+## Users Extraction [TASK 4] :
+
+1) `admin` is the default username.
+
+2) `admin` is the default password.
+
+3) login with admin creds to get the `cookie`.
+
+4) if we played with the userid parametre, we get some users, the correct one is bryce.
+
+`http://10.10.201.204/users/sample.php?userid=11`
+
+5) the password for bryce is the `username`.7
+
+
+## XSS [TASK 5] :
+
+We successfully managed to trigger a XSS in the search bar and in the guestbook with this basic script :
+
+```<script>alert('hello bvr0n')</script>```
+
+
+## Injection [TASK 6] :
+
+2) We can inject `SQLI` in the login form with this : 
+
+`' or 1=1--`
+
+
+## Misc & Logic Flaws [TASK 7]:
+
+1) The parameter is the `userid=` we found erlier.
+
+2) Upload a file named `../etc/passwd` and we get the file traversal.
+
+3) When trying to purchase a picture we get a `High Quality Link`, that's the restricted side.
+
+4) Apply this coupon multiple time till you get it for free `SUPERYOU21`
+
+<br>
+best regards
+
+[bvr0n](https://github.com/bvr0n)
+
+
+<br>
+[back to main()](bvr0n.github.io/)
+
+<br>
