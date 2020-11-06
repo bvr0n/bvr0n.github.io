@@ -1,6 +1,6 @@
 ---
 layout: default
-title : bvr0n - Biohazard Write-up
+title : Biohazard - Writeup
 ---
 
 # [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
