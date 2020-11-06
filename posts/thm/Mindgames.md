@@ -1,6 +1,6 @@
 ---
 layout: default
-title : bvr0n - mindgames Write-up
+title : bvr0n - Mindgames | Writeup
 ---
 
 # [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
