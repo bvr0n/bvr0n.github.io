@@ -29,7 +29,8 @@ Hope you enjoy this and happy hacking.<br>
 - **Oct 04, 2020:** [TryHackme - One Piece](./posts/thm/one_piece.md)
 - **Oct 05, 2020:** [TryHackme - Mindgames](./posts/thm/Mindgames.md)
 - **Oct 06, 2020:** [TryHackme - UltraTech](./posts/thm/UltraTech.md)
-- **Nov 11, 2020:** [TryHackme - WebAppSec 101](./posts/thm/WebAppSec_101.md)
+- **Nov 06, 2020:** [TryHackme - WebAppSec 101](./posts/thm/WebAppSec_101.md)
+- **Nov 06, 2020:** [TryHackme - NerdHerd](./posts/thm/nerdherd.md)
 <br clear="left">
 
 
