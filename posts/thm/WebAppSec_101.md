@@ -1,6 +1,6 @@
 ---
 layout: default
-title : bvr0n - WebAppSec 101 Write-up
+title : WebAppSec 101 - Writeup
 ---
 
 # [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
