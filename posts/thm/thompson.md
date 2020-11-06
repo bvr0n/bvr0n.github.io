@@ -3,6 +3,8 @@ layout: default
 title : bvr0n - mindgames Write-up
 ---
 
+# [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
+
 _**Sept 30, 2020**_
 
 [Thompson](https://tryhackme.com/room/bsidesgtthompson) Writeup
