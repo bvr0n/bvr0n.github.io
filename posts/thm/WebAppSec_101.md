@@ -3,7 +3,9 @@ layout: default
 title : bvr0n - WebAppSec 101 Write-up
 ---
 
-_**Oct 02, 2020**_
+# [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
+
+_**Nov 11, 2020**_
 
 [WebAppSec 101](https://tryhackme.com/room/webappsec101) Writeup
 
