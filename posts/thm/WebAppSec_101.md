@@ -41,7 +41,7 @@ Content-Type: text/html
 
 ## XSS [TASK 5] :
 
-We successfully managed to trigger a XSS in the search bar and in the guestbook with this basic script :
+We successfully managed to trigger XSS in the search bar & in the Guestbook with this basic script :
 
 ```<script>alert('hello bvr0n')</script>```
 
