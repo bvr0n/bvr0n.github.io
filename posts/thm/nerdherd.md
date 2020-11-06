@@ -1,11 +1,11 @@
 ---
 layout: default
-title : bvr0n - NerdHerd | Writeup
+title : NerdHerd - Writeup
 ---
 
 # [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
 
-_**Oct 05, 2020**_
+_**Nov 06, 2020**_
 
 [NerdHerd](https://tryhackme.com/room/nerdherd) Writeup
 
@@ -114,7 +114,7 @@ bvr0n@kali:~/CTF/THM/NerdHerd_v2$ smbclient --no-pass -L 10.10.203.70
 Sharename       	        Type      Comment
 ---------       	        ----      -------
 print$          	        Disk      Printer Drivers
-nerdherd_classified 	    Disk      Samba on Ubuntu
+nerdherd_classified 	    	Disk      Samba on Ubuntu
 IPC$            	        IPC       IPC Service (nerdherd server (Samba, Ubuntu))
 ```
 I tried accessing the `nerdherd_classified` but we need a valid user to login with, so i tried this :
