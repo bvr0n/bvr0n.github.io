@@ -3,6 +3,8 @@ layout: default
 title : bvr0n - One Piece Write-up
 ---
 
+# [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
+
 _**Oct 04, 2020**_
 
 [One Piece](https://tryhackme.com/room/ctfonepiece65) Writeup
