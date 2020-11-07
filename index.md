@@ -7,7 +7,7 @@ title: Official bvr0n's InfoSec Blog
 
 <br>
 
-# Welcome To My Blog :
+# Introduction :
 <br>
 
 Welcome to my Official Blog, Here i will share with you some of my `Writeups` that i have written when playing `CTF Competitions` or some rooms in [TryHackMe](https://tryhackme.com/) or [HackTheBox](https://www.hackthebox.eu/) or some `Articles` related to `CyberSecurity`.
@@ -15,7 +15,7 @@ Welcome to my Official Blog, Here i will share with you some of my `Writeups` th
 Hope you enjoy this and happy hacking.<br>
 <br>
 
-# CyberSecurity Workshops :
+# Workshops :
 <br>
 
 - **Oct 11, 2020:** [Cowrie SSH Honeypot](./posts/workshops/cowrie_honeypot/project.md)
