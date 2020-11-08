@@ -73,7 +73,7 @@ bvr0n@kali:~/CTF/THM/NerdHerd_v2$ ncftp 10.10.203.70
 ncftp /pub > ls -la
 drwxr-xr-x    2 ftp      ftp          4096 Sep 14 18:35 .*****onyou
 -rw-rw-r--    1 ftp      ftp         89894 Sep 11 03:45 youfoundme.png
-ncftp /pub > cd .jokesonyou   
+ncftp /pub > cd .*****onyou   
 ncftp /pub/.*****onyou > ls
 hellon3rd.txt
 ```
