@@ -62,6 +62,7 @@ bvr0n@kali:~/CTF/THM/Willow$ sudo showmount -e 10.10.58.196
 Export list for 10.10.58.196:
 /var/failsafe *
 ```
+Apparently we have a shared folder, Let's mount it :
 ```
 bvr0n@kali:~/CTF/THM/Willow$ sudo mount -t nfs 10.10.170.153:/var/failsafe /mnt/ewf/ -nolock
 bvr0n@kali:/mnt/ewf$ cat rsa_keys 
@@ -71,7 +72,7 @@ Private Key Pair: (61527, 37627)
 
 ## Web Enum :
 
-After visiting the web page we can see a lot of encoded numbers, When we throw it all in [CyberChef](https://gchq.github.io/CyberChef/) we get this :
+After visiting the web page we can see a lot of encoded numbers `(HEX)`, When we throw it all in [CyberChef](https://gchq.github.io/CyberChef/) we get this :
 ```
 Hey Willow, here's your SSH Private key -- you know where the decryption key is!
 ```
