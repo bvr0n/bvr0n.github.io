@@ -78,7 +78,7 @@ Hey Willow, here's your SSH Private key -- you know where the decryption key is!
 
 Now the shared folder make sens, it's a private key, let's get it!! i grabbed all the numbers after the message we retireved and head here [RSA Calculator](https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Fa17/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt_v2.html) :
 
-The modulus `N` was `37627` & The modulus d was `61527` (from the shared folder).
+The modulus `N` was `37627` & The modulus `d` was `61527` (from the shared folder).
 
 After grabbing the `RSA_Private_KEY`, now all we need is the password ! CRACKING TIME.
 
