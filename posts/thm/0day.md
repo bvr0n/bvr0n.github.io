@@ -86,7 +86,7 @@ bvr0n@kali:~/CTF/THM/0day$ nikto -h 10.10.86.209
 + Uncommon header '93e4r0-cve-2014-6278' found, with contents: true
 + OSVDB-112004: /cgi-bin/test.cgi: Site appears vulnerable to the 'shellshock' vulnerability (http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6271)
 ```
-Nikto was able to find a vulnerability named `Shellshock`.
+Nikto was able to find a vulnerability named `Shellshock - CVE-2014-6271`.
 
 ## Shellshock :
 
@@ -102,7 +102,7 @@ Shellshock could enable an attacker to cause Bash to execute arbitrary commands 
 * IBM HMC restricted shell
 * Vulnerable since version 1.03 of Bash released in September 1989
 
-## Shellsock Exploitation :
+## Shellshock Exploitation :
 
 I searched for it in metasploit and found 11 modules, but this one matches what we need :
 
