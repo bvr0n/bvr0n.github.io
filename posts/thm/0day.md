@@ -89,17 +89,23 @@ bvr0n@kali:~/CTF/THM/0day$ nikto -h 10.10.86.209
 Nikto was able to find a vulnerability named `Shellshock`.
 
 ## Shellshock :
-```
-Shellshock is effectively a Remote Command Execution vulnerability in BASH.
-The vulnerability relies in the fact that BASH incorrectly executes trailing commands when it imports a function definition stored into an environment variable.
-```
+
+Also known as Bashdoor,is a family of security bugs in the Unix Bash shell, the first of which was disclosed on 24 September 2014. 
+Shellshock could enable an attacker to cause Bash to execute arbitrary commands and gain unauthorized access to many Internet-facing services, such as web servers, that use Bash to process requests. 
+
 * Any *NIX OS may be vulnerable
 * Any product / appliance implementing bash may be vulnerable
 * Vulnerable since version 1.03 of Bash released in September 1989
 * RCE via Apache with mod_cgi, CGI Scripts, Python, Perl
 * RCE on DHCP clients using Hostile DHCP ServerOpenSSHRCE/Privilege escalation
 
-Shellshock Remote Command Execution via Apache CGI Script.
+##### Specific exploitation vectors :
+
+* CGI-based web server
+* OpenSSH server
+* DHCP clients
+* Qmail server
+* IBM HMC restricted shell
 
 ##### Victim requirements:
 
