@@ -8,7 +8,7 @@ title: TryHackMe - Writeups
 <br>
 <br>
 
-- **Sep 30, 2020:** [TryHackme - Thompson](./thm/thompson.md)
+- **Sep 30, 2020:** [TryHackme - Thompson](../thm/thompson.md)
 - **Oct 02, 2020:** [TryHackme - Biohazard](./thm/Biohazard.md)
 - **Oct 04, 2020:** [TryHackme - One Piece](./thm/one_piece.md)
 - **Oct 05, 2020:** [TryHackme - Mindgames](./thm/Mindgames.md)
