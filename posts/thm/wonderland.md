@@ -65,11 +65,11 @@ Once i checked the code source i found a hidden text, hidding alice's SSH creds 
 alice:HowDothTheLittleCrocodileImproveHisShiningTail
 ```
 
-## Priv Esc :
+## Privilege Escalation :
 
 After some enumeration, i found out that the `/root/` is accessible by everyone but read permission was not given on the other hand execute permission was present, so we can get the `user.txt`
 
-** Rabbit User :
+* #### Rabbit User :
 
 in Alice home directory we can find a script that basically import the random module.
 
@@ -85,7 +85,7 @@ alice@wonderland:~$ sudo -u rabbit /usr/bin/python3.6 /home/alice/walrus_and_the
 rabbit@wonderland:~$
 ```
 
-** Hatter User :
+* #### Hatter User :
 
 In `/home/rabbit` we can see a setuid binary, after examining the file, we can see that `date` is getting executed without pecifying an absolute path :
 
@@ -118,7 +118,7 @@ hatter@wonderland:/home/hatter$ cat password.txt
 WhyIsARavenLikeAWritingDesk?
 ```
 
-** Root :
+* #### Root :
 
 After some enumeration, linpeas showed something intresting :
 
