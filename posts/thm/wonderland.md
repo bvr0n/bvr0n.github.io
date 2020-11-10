@@ -43,7 +43,7 @@ Turns out, there is a files hidden inside that says this :
 ```
 follow the r a b b i t
 ```
-Didn't understand at first, but when i brute forced directoris i get the idea :
+I didn't understand it at first, but when i brute forced directories i got the idea :
 
 ```bash
 bvr0n@kali:~/CTF/THM/Wonderland$ ffuf -c -u http://10.10.252.9/FUZZ -w ~/Documents/Dirbuster/wordlist.txt 
@@ -67,11 +67,11 @@ alice:**********************************************
 
 ## Privilege Escalation :
 
-After some enumeration, i found out that the `/root/` is accessible by everyone but read permission was not given on the other hand execute permission was present, so we can get the `user.txt`
+After some enumeration, i found out that the `/root/` is accessible by everyone but read permission was not given, on the other hand execute permission was present, so we can get the `user.txt`
 
 * #### Rabbit User :
 
-in Alice home directory we can find a script that basically import the random module.
+in Alice home directory there is a script that basically import the random module.
 
 So, we can create a file named random.py in our current working directory that executes `/bin/bash` This way the python file should be loaded instead of the "real" random module, and in turn give us a shell as the rabbit user.
 `random.py` :
