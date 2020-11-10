@@ -59,10 +59,10 @@ The files was pointing to a path in the browser :
 http://10.10.252.9/r/a/b/b/i/t/
 ```
 
-Once i checked the code source i found a hidden text, hidding alice's SSH creds :
+Once i checked the code source i found a hidden text, hidding alice's `SSH` creds :
 
 ```
-alice:HowDothTheLittleCrocodileImproveHisShiningTail
+alice:**********************************************
 ```
 
 ## Privilege Escalation :
@@ -115,7 +115,7 @@ Inside his directory we can find his ssh credentials :
 
 ```
 hatter@wonderland:/home/hatter$ cat password.txt 
-WhyIsARavenLikeAWritingDesk?
+****************************
 ```
 
 * #### Root :
