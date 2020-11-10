@@ -21,11 +21,11 @@ Hope you enjoy this and happy hacking.<br>
 - **Oct 11, 2020:** [Cowrie SSH Honeypot](./posts/workshops/cowrie_honeypot/project.md)
 
 
-# [TryHackMe Writeups](./posts/thm/Tryhackme_Page/index.md) : 
+# [TryHackMe Writeups](./posts/Tryhackme_Page/index.md) : 
 <br>
 
 
-# [HackTheBox Writeups](./posts/thm/Hackthebox_Page/index.md) :
+# [HackTheBox Writeups](./posts/Hackthebox_Page/index.md) :
 <br>
 
 
