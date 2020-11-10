@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Official bvr0n's InfoSec Blog
+title: bvr0n's InfoSec Blog
 ---
 
 # [Main](./index.md) &nbsp;&nbsp;   [Contact](./contact.md) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
@@ -21,11 +21,11 @@ Hope you enjoy this and happy hacking.<br>
 - **Oct 11, 2020:** [Cowrie SSH Honeypot](./posts/workshops/cowrie_honeypot/project.md)
 
 
-# [TryHackMe Writeups](./posts/Tryhackme_Page/index.md) : 
+# [TryHackMe Writeups](./posts/Tryhackme_Page/index.md)
 <br>
 
 
-# [HackTheBox Writeups](./posts/Hackthebox_Page/index.md) :
+# [HackTheBox Writeups](./posts/Hackthebox_Page/index.md)
 <br>
 
 
