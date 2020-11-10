@@ -19,6 +19,7 @@ title: TryHackMe - Writeups
 - **Nov 08, 2020:** [TryHackme - Willow](../thm/willow.md)
 - **Nov 09, 2020:** [TryHackme - Startup](../thm/startup.md)
 - **Nov 10, 2020:** [TryHackme - Wonderland](../thm/wonderland.md)
+- **Nov 10, 2020:** [TryHackme - 0day](../thm/0day.md)
 
 <br>
 <br>
