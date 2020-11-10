@@ -1,6 +1,6 @@
 ---
 layout: default
-title : 0dat - Writeup
+title : 0day - Writeup
 ---
 
 # [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
@@ -172,6 +172,6 @@ best regards
 
 
 <br>
-[back to main()](bvr0n.github.io/)
+[back to main()](https://bvr0n.github.io/)
 
 <br>
