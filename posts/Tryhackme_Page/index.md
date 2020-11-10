@@ -7,6 +7,7 @@ title: TryHackMe - Writeups
 
 <br>
 <br>
+
 - **Sep 30, 2020:** [TryHackme - Thompson](./posts/thm/thompson.md)
 - **Oct 02, 2020:** [TryHackme - Biohazard](./posts/thm/Biohazard.md)
 - **Oct 04, 2020:** [TryHackme - One Piece](./posts/thm/one_piece.md)
@@ -19,7 +20,6 @@ title: TryHackMe - Writeups
 - **Nov 09, 2020:** [TryHackme - Startup](./posts/thm/startup.md)
 - **Nov 10, 2020:** [TryHackme - Wonderland](./posts/thm/wonderland.md)
 
-<br>
 <br>
 <br>
 <br>
