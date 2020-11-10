@@ -29,4 +29,4 @@ title: TryHackMe - Writeups
 <br>
 
 
-[Back to Main()](./index.md)
+[Back to Main()](bvr0n.github.io/)
