@@ -90,31 +90,17 @@ Nikto was able to find a vulnerability named `Shellshock`.
 
 ## Shellshock :
 
-Also known as Bashdoor,is a family of security bugs in the Unix Bash shell, the first of which was disclosed on 24 September 2014. 
+Also known as Bashdoor, is a family of security bugs in the Unix Bash shell, the first of which was disclosed on 24 September 2014. 
 Shellshock could enable an attacker to cause Bash to execute arbitrary commands and gain unauthorized access to many Internet-facing services, such as web servers, that use Bash to process requests. 
-
-* Any *NIX OS may be vulnerable
-* Any product / appliance implementing bash may be vulnerable
-* Vulnerable since version 1.03 of Bash released in September 1989
-* RCE via Apache with mod_cgi, CGI Scripts, Python, Perl
-* RCE on DHCP clients using Hostile DHCP ServerOpenSSHRCE/Privilege escalation
 
 ##### Specific exploitation vectors :
 
-* CGI-based web server
+* CGI-based web server, Python, Perl
 * OpenSSH server
 * DHCP clients
 * Qmail server
 * IBM HMC restricted shell
-
-##### Victim requirements:
-
-* Apache web server-mod_cgienabled
-* -Helloworld.cgiscript
-
-##### Attacker requirements:
-
-* Listener running to accept incoming connections
+* Vulnerable since version 1.03 of Bash released in September 1989
 
 ## Shellsock Exploitation :
 
