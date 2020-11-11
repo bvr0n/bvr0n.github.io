@@ -1,7 +1,8 @@
 ---
-layout: default
-title: TryHackMe - Writeups
-permalink: /writeups/index.md
+layout: posts
+title: "TryHackMe - Writeups"
+permalink: /writeups/tryhackme/
+author_profile: true
 ---
 
 <br>
