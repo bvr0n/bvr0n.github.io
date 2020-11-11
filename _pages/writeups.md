@@ -6,7 +6,7 @@ permalink: /writeups/
 
 * ####  [TryHackMe Writeups](./tryhackme-wr.md)
 
-* ####  [HackTheBox Writeups](/_posts/02-htb-index.md)
+* ####  [HackTheBox Writeups](./hackthebox-wr.md)
 
 * ####  [B01lers-CTF Writeups](/_posts/ctf/b01lers/index.md)
 
