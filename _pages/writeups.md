@@ -4,7 +4,7 @@ title: Writeups
 permalink: /writeups/
 ---
 
-* ####  [TryHackMe Writeups](./_posts/thm-index.md)
+* ####  [TryHackMe Writeups](/_posts/thm-index.md)
 
 * ####  [HackTheBox Writeups](/_posts/htb-index.md)
 
