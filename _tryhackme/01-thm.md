@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: cookie
 title: TryHackMe - Writeups
 author_profile: true
 ---
