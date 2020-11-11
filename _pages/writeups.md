@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: Writeups
+title: TryHackMe - Writeups
 permalink: /writeups/
 ---
 
