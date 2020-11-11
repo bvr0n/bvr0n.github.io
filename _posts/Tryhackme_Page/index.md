@@ -1,7 +1,6 @@
 ---
 layout: posts
-title: "TryHackMe - Writeups"
-permalink: /writeups/tryhackme/
+title: TryHackMe - Writeups
 author_profile: true
 ---
 
