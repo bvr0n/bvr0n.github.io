@@ -2,10 +2,10 @@
 main:
   - title: "About"
     url: /about/
-  # title: "Contact"
-  #  url: /contact/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
+  - title: "Project"
+    url: /project/
+  - title: "Writeups"
+    url: /writeups/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
