@@ -1,9 +1,8 @@
 ---
 layout: default
-title : bvr0n - Cowrie SSH Honeypot 
+title : Cowrie SSH Honeypot
+permanlink: /project/project.md
 ---
-
-# [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
 
 <br>
 
