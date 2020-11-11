@@ -10,7 +10,7 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "en-US"
 title                    : "InfoSec Blog | bvr0n"
-#title_separator          : "-"
+title_separator          : "|"
 name                     : "Taha El Ghadraoui"
 description              : "Ethical Hacker, CTF Player, Friend."
 url                      : "https://bvr0n.github.io/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
@@ -97,11 +97,11 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "https://github.com/bvr0n"
+  github           : "bvr0n"
   gitlab           :
   google_plus      :
   keybase          :
-  instagram        : "https://instagram.com/taha.elghadraoui/"
+  instagram        : "taha.elghadraoui"
   lastfm           :
   linkedin         : "taha-el-ghadraoui-5921771a5" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
   pinterest        :
