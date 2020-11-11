@@ -1,9 +1,7 @@
 ---
-layout: default
 title : Biohazard - Writeup
 ---
 
-# [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
 
 _**Oct 02, 2020**_
 
