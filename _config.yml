@@ -176,12 +176,9 @@ kramdown:
  collections:
   tryhackme:
     output: true
-    permalink: /:collection/:path/
  collections:
   hackthebox:
     output: true
-    permalink: /:collection/:path/
-
 
 
 # Sass/SCSS
