@@ -4,9 +4,9 @@ title: Writeups
 permalink: /writeups/
 ---
 
-* ####  [TryHackMe Writeups](/_posts/Tryhackme_Page/index.md)
+* ####  [TryHackMe Writeups](/_posts/thm-index.md)
 
-* ####  [HackTheBox Writeups](/_posts/Hackthebox_Page/index.md)
+* ####  [HackTheBox Writeups](/_posts/htb-index.md)
 
 * ####  [B01lers-CTF Writeups](/_posts/ctf/b01lers/index.md)
 
