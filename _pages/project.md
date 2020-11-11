@@ -3,4 +3,5 @@ layout: archive
 title: "Project"
 permalink: /project/
 ---
-hi
+
+## [Cowrie SSH Honeypot](./_posts/workshops/cowrie_honeypot/project.md)
