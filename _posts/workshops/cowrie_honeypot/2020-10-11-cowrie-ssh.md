@@ -1,7 +1,6 @@
 ---
-layout: default
 title : Cowrie SSH Honeypot
-permanlink: /project/project.md
+permanlink: /project/cowrie-ssh/
 ---
 
 <br>
