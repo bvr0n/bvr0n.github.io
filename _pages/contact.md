@@ -1,9 +1,8 @@
 ---
-layout: default
-title: Contact - bvr0n's | Infosec Blog
+layout: archive
+title: Contact
+permalink: /contact/
 ---
-
-# [Main](./index.md) &nbsp;&nbsp;   [Contact](./contact.md) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
 
 <br>
 
@@ -24,6 +23,6 @@ title: Contact - bvr0n's | Infosec Blog
 <br>
 <br>
 
-[Back to Main()](./index.md)
+[Back to Main](./index.md)
 
 <br>
