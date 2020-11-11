@@ -1,7 +1,8 @@
 ---
-layout: posts
+layout: archive
 title: TryHackMe - Writeups
 author_profile: true
+permalink: /writeups/tryhackme/
 ---
 
 <br>
