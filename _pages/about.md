@@ -5,8 +5,9 @@ permalink: /about/
 
 ![Banner](/assets/images/logo.jpg "Banner")
 
-Hi there! My name is Taha, I'm a security researcher. This is where I post my writeups and other useful information. I've been in the game less than a year and am already so deep down the rabbit hole. Nothing warms my eggs in the morning better than a good Ippsec video or Darknet Diaries episode. On the small amount of time I've been doing security started and CTF team ``APTx1337``. As it turns out, security is a long and fruitful journey. I later deep-dived into learning to become a penetration tester and hope to share whatever I can with anyone who is interested to become one too.
+Hi there! My name is Taha, I'm a security researcher. This is where I post my writeups and other useful information. I've been in the game less than a year and am already so deep down the rabbit hole. Nothing warms my eggs in the night better than a good Boot-To-Root box or some Darknet Diaries episode. When i started meeting new people in this area i decided to create CTF team called ``APTx1337``. As it turns out, security is a long and fruitful journey. I later deep-dived into learning to become a penetration tester and hope to share whatever I can with anyone who is interested to become one too.
 
+* [TryHackMe](https://tryhackme.com/p/bvr0n)
 <br>
 
 # <center>APTx1337</center>
