@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: posts
 title: TryHackMe - Writeups
+author_profile: true
 ---
-
-# [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
 
 <br>
 <br>
@@ -29,8 +28,6 @@ title: TryHackMe - Writeups
 <br>
 <br>
 <br>
-<br>
-<br>
 
 
-[Back to Main()](bvr0n.github.io/)
+[Back to Main](https://bvr0n.github.io/)
