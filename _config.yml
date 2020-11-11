@@ -175,12 +175,10 @@ kramdown:
  # Collections
  collections:
   tryhackme:
-    collections_dir: /_posts/01-thm-index.md
     output: true
     permalink: /:collection/:path/
  collections:
   hackthebox:
-    collections_dir: /_posts/02-htb-index.md
     output: true
     permalink: /:collection/:path/
 
@@ -193,7 +191,7 @@ sass:
 
 
 # Outputting
-permalink: /:categories/:path/
+permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
