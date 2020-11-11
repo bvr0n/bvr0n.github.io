@@ -18,11 +18,11 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "en-US"
-title                    : ""
+title                    : "bvr0n's InfoSec Blog"
 title_separator          : ""
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "bvr0n"
-description              : "Penetration Testing, WebApp security, Infosec, Hacking, Walkthrough, HackTheBox, TryHackMe, VulnHub, metasploit, OSCP, hackerone, bugcrowd"
+description              : "Penetration Testing, WebApp security, Infosec, Hacking, Walkthrough, HackTheBox, TryHackMe, VulnHub, metasploit, OSCP."
 url                      : "https://bvr0n.github.io/" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "/bvr0n/bvr0n.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -111,7 +111,7 @@ analytics:
 author: bvr0n
   name             : "bvr0n"
   avatar           : "/assets/images/bio-photo.PNG" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : #Ethical Hacker, CTF Player, Friend."
+  bio              : Ethical Hacker, CTF Player, Friend."
   location         : #"Somewhere"
   email            :
   links:
