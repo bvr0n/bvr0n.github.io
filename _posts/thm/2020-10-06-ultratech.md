@@ -1,9 +1,6 @@
 ---
-layout: default
 title : UltraTech - Writeup
 ---
-
-# [Main](https://bvr0n.github.io/) &nbsp;&nbsp;   [Contact](https://bvr0n.github.io/contact.html) &nbsp;&nbsp; [About Me](./aboutme.md) <br>
 
 _**Oct 06, 2020**_
 
