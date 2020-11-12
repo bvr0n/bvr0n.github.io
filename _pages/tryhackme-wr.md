@@ -22,15 +22,4 @@ header:
 - **Nov 09, 2020:** [TryHackme - Startup](../_posts/thm/2020-11-09-startup.md)
 - **Nov 10, 2020:** [TryHackme - Wonderland](../_posts/thm/2020-11-10-wonderland.md)
 - **Nov 10, 2020:** [TryHackme - 0day](../_posts/thm/2020-11-10-0day.md)
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-[Back to Main](https://bvr0n.github.io/)
+- **Nov 12, 2020:** [TryHackme - Attacktive Directory](../_posts/thm/2020-11-12-attacktivedir.md)
