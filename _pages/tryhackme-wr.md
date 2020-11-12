@@ -3,6 +3,8 @@ layout: archive
 title: TryHackMe - Writeups
 author_profile: true
 permalink: /writeups/tryhackme/
+header: 
+  image: "../assets/images/thm-image.png"
 ---
 
 <br>
