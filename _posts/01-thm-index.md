@@ -20,15 +20,4 @@ permalink: /writeups/tryhackme/
 - **Nov 09, 2020:** [TryHackme - Startup](../thm/2020-11-09-startup.md)
 - **Nov 10, 2020:** [TryHackme - Wonderland](../thm/2020-11-10-wonderland.md)
 - **Nov 10, 2020:** [TryHackme - 0day](../thm/2020-11-10-0day.md)
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-[Back to Main](https://bvr0n.github.io/)
+- **Nov 12, 2020:** [TryHackme - Attacktive Directory](../thm/2020-11-12-attacktivedir.md)
