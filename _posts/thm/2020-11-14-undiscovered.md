@@ -4,7 +4,7 @@ title: Undiscovered - Writeup
 
 _**Nov 14, 2020**_
 
-[Undiscovered](tryhackme.com/room/undiscoveredup) Writeup
+[Undiscovered](https://tryhackme.com/room/undiscoveredup) Writeup
 
 ## Recon :
 
