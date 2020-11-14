@@ -24,3 +24,4 @@ header:
 - **Nov 10, 2020:** [TryHackme - 0day](../_posts/thm/2020-11-10-0day.md)
 - **Nov 12, 2020:** [TryHackme - Attacktive Directory](../_posts/thm/2020-11-12-attacktivedir.md)
 - **Nov 13, 2020:** [TryHackme - The Marketplace](../_posts/thm/2020-11-13-marketplace.md)
+- **Nov 14, 2020:** [TryHackme - Undiscovered](../_posts/thm/2020-11-14-undiscovered.md)
