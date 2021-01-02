@@ -2,7 +2,7 @@
 title : Bounty Hacker - Writeup
 ---
 
-_**Jan 01, 2021**_
+_**Jan 02, 2021**_
 
 [Bounty Hacker](https://tryhackme.com/room/cowboyhacker) Writeup
 
