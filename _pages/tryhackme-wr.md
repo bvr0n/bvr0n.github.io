@@ -6,6 +6,9 @@ permalink: /writeups/tryhackme/
 header: 
   image: "../assets/images/thm-image.png"
 ---
+<br>
+
+<img src="https://tryhackme-badges.s3.amazonaws.com/bvr0n.png" alt="TryHackMe">
 
 <br>
 <br>
