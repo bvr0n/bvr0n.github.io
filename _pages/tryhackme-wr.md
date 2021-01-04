@@ -3,12 +3,12 @@ layout: archive
 title: TryHackMe - Writeups
 author_profile: true
 permalink: /writeups/tryhackme/
-header: 
-  image: "../assets/images/thm-image.png"
 ---
-<br>
 
-<img src="https://tryhackme-badges.s3.amazonaws.com/bvr0n.png" alt="TryHackMe">
+<br>
+<img src="../assets/images/thm-image.png" class="centre">
+
+<img src="https://tryhackme-badges.s3.amazonaws.com/bvr0n.png" alt="TryHackMe"
 
 <br>
 <br>
