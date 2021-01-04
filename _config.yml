@@ -85,7 +85,7 @@ analytics:
 # Site Author
 author:
   name             : "Taha El Ghadraoui"
-  avatar           : "/assets/images/logo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/pdp.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Ethical Hacker, CTF Player, Friend."
   location         : "Morocco"
   email            : "elghadtaha@email.com"
@@ -109,7 +109,7 @@ author:
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          :
+  twitter          : "bvr0n___"
   vine             :
   weibo            :
   xing             :
