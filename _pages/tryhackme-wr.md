@@ -8,7 +8,7 @@ permalink: /writeups/tryhackme/
 <br>
 <img src="../assets/images/thm-image.png" class="centre">
 
-<img src="https://tryhackme-badges.s3.amazonaws.com/bvr0n.png" alt="TryHackMe"
+<img src="https://tryhackme-badges.s3.amazonaws.com/bvr0n.png" alt="TryHackMe">
 
 <br>
 <br>
