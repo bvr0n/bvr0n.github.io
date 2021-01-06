@@ -1,9 +1,8 @@
 ---
-layout: default
-title : bvr0n - Unbalanced Write-up
+title : Unbalanced - Writeup
 ---
 
-_**Oct 10, 2020**_
+_**Jan 05, 2021**_
 
 [Unbalanced](https://www.hackthebox.eu/home/machines/profile/268) Writeup
 
@@ -181,15 +180,3 @@ After checking `pihole_config.sh` i found something pretty intresting :
 /usr/local/bin/pihole -a -p 'bUbBl3********Ry0n3!'
 ```
 That was the Root password for ssh !!!
-
-<br>
-best regards
-
-[bvr0n](https://github.com/bvr0n)
-
-
-<br>
-<br>
-[back to main](https://bvr0n.github.io/)
-
-<br>
