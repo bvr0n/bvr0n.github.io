@@ -13,4 +13,4 @@ permalink: /writeups/hackthebox/
 
 <br>
 
-- **Jan 06, 2021:** [HackTheBox - Time](../_posts/thm/2020-09-30-thompson.md)
+- **Jan 06, 2021:** [HackTheBox - Time](../_posts/htb/2021-06-01-time.md)
