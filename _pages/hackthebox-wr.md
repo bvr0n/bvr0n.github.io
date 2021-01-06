@@ -13,4 +13,5 @@ permalink: /writeups/hackthebox/
 
 <br>
 
+- **Jan 05, 2021:** [HackTheBox - Unbalanced](../_posts/htb/2021-05-01-unbalanced.md)
 - **Jan 06, 2021:** [HackTheBox - Time](../_posts/htb/2021-06-01-time.md)
