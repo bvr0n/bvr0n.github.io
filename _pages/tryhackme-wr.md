@@ -16,7 +16,6 @@ permalink: /writeups/tryhackme/
 - **Oct 02, 2020:** [TryHackme - Biohazard](../_posts/thm/2020-10-02-biohazard.md)
 - **Oct 04, 2020:** [TryHackme - One Piece](../_posts/thm/2020-10-04-one_piece.md)
 - **Oct 05, 2020:** [TryHackme - Mindgames](../_posts/thm/2020-10-05-mindgames.md)
-- **Oct 06, 2020:** [TryHackme - UltraTech](../_posts/thm/2020-10-06-ultratech.md)
 - **Nov 06, 2020:** [TryHackme - WebAppSec 101](../_posts/thm/2020-11-11-webappsec_101.md)
 - **Nov 06, 2020:** [TryHackme - NerdHerd](../_posts/thm/2020-11-06-nerdherd.md)
 - **Nov 08, 2020:** [TryHackme - Brute It](../_posts/thm/2020-11-08-brute_it.md)
@@ -30,3 +29,4 @@ permalink: /writeups/tryhackme/
 - **Jan 02, 2021:** [TryHackme - Bounty Hacker](../_posts/thm/2021-01-02-bounty_hacker.md)
 - **Jan 03, 2021:** [TryHackme - All In One](../_posts/thm/2021-01-03-all_in_one.md)
 - **Jan 04, 2021:** [TryHackme - Daily Bugle](../_posts/thm/2021-01-04-dailybugle.md)
+- **Jan 07, 2021:** [TryHackme - UltraTech](../_posts/thm/2021-07-01-ultratech.md)
