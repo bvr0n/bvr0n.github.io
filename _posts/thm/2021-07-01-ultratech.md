@@ -2,7 +2,7 @@
 title : UltraTech - Writeup
 ---
 
-_**Oct 06, 2020**_
+_**Jan 07, 2021**_
 
 [UltraTech](https://tryhackme.com/room/ultratech1) Writeup
 
