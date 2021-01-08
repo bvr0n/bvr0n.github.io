@@ -22,7 +22,6 @@ permalink: /writeups/tryhackme/
 - **Nov 08, 2020:** [TryHackme - Willow](../_posts/thm/2020-11-08-willow.md)
 - **Nov 09, 2020:** [TryHackme - Startup](../_posts/thm/2020-11-09-startup.md)
 - **Nov 10, 2020:** [TryHackme - Wonderland](../_posts/thm/2020-11-10-wonderland.md)
-- **Nov 10, 2020:** [TryHackme - 0day](../_posts/thm/2020-11-10-0day.md)
 - **Nov 12, 2020:** [TryHackme - Attacktive Directory](../_posts/thm/2020-11-12-attacktivedir.md)
 - **Nov 13, 2020:** [TryHackme - The Marketplace](../_posts/thm/2020-11-13-marketplace.md)
 - **Nov 14, 2020:** [TryHackme - Undiscovered](../_posts/thm/2020-11-14-undiscovered.md)
@@ -30,3 +29,4 @@ permalink: /writeups/tryhackme/
 - **Jan 03, 2021:** [TryHackme - All In One](../_posts/thm/2021-01-03-all_in_one.md)
 - **Jan 04, 2021:** [TryHackme - Daily Bugle](../_posts/thm/2021-01-04-dailybugle.md)
 - **Jan 07, 2021:** [TryHackme - UltraTech](../_posts/thm/2021-07-01-ultratech.md)
+- **Jan 08, 2021:** [TryHackme - 0day](../_posts/thm/2021-01-08-0day.md)
