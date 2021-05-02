@@ -6,6 +6,7 @@ permalink: /writeups/tryhackme/
 ---
 
 <br>
+<img src="https://tryhackme-badges.s3.amazonaws.com/bvr0n.png" alt="TryHackMe" class="centre">
 <img src="/assets/images/thm-image.png" height="500" width="900">
 
 <img src="https://tryhackme-badges.s3.amazonaws.com/bvr0n.png" alt="TryHackMe" class="centre">
