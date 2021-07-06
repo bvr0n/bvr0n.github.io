@@ -1,5 +1,4 @@
 ---
-layout: archive
 title: ads
 permalink: /ads.txt
 ---
