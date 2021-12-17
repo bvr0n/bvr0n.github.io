@@ -31,4 +31,5 @@ permalink: /writeups/tryhackme/
 - **Jan 09, 2021:** [TryHackme - Attacktive Directory](../_posts/thm/2021-01-09-attacktivedir.md)
 - **Jan 11, 2021:** [TryHackme - Wonderland](../_posts/thm/2021-01-11-wonderland.md)
 - **Jan 15, 2021:** [TryHackme - Willow](../_posts/thm/2021-01-15-willow.md)
+- **Dec 17, 2021:** [TryHackme - Skynet](../_posts/thm/2021-12-17-skynet.md)
 
